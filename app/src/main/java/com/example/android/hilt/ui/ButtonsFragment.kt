@@ -21,8 +21,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.android.hilt.data.LoggerLocalDataSource
+import com.example.android.hilt.data.LoggerDataSource
 import com.example.android.hilt.databinding.FragmentButtonsBinding
+import com.example.android.hilt.di.InMemoryLogger
 import com.example.android.hilt.navigator.AppNavigator
 import com.example.android.hilt.navigator.Screens
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,8 +38,10 @@ class ButtonsFragment : Fragment() {
     private var _binding: FragmentButtonsBinding? = null
     private val binding get() = _binding!!
 
+    @InMemoryLogger
     @Inject
-    lateinit var logger: LoggerLocalDataSource
+    lateinit var logger: LoggerDataSource
+
     @Inject
     lateinit var navigator: AppNavigator
 
