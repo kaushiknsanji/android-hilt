@@ -1,37 +1,38 @@
 # Using Hilt in your Android app
 
-This folder contains the source code for the "Using Hilt in your Android app" codelab.
+An application that logs user's interactions on buttons and displays them in a `Fragment`, built by following the instructions detailed in the Google Codelab **["Using Hilt in your Android app"][Android_Hilt_Codelab]**. Original code by Google for this codelab can be referred [here][Android_Hilt_Repository].
 
-The codelab is built in multiple GitHub branches:
-* `main` is the codelab's starting point.
-* `solution` contains the solution to this codelab.
+## What one will learn
 
+* How to use Hilt in your Android app.
+* How to set up Hilt in your Application class using `@HiltAndroidApp`.
+* How to add dependency containers to the different Android lifecycle components using `@AndroidEntryPoint`.
+* How to use Modules to tell Hilt how to provide certain types like interfaces and others which do not allow/support constructor injection.
+* How to Scope bindings to a specific Container/Component.
+* How to add multiple bindings to the same type with Qualifiers.
+* How to execute Instrumented tests with Hilt to test an application that uses Hilt for Dependency Injection.
+* How to use `@EntryPoint` to access containers from classes that Hilt does not support.
 
-# Introduction
-Dependency injection is a technique widely used in programming and well suited
-to Android development. By following the principles of dependency injection, you
-lay the groundwork for a good app architecture.
+## Getting Started
 
-Implementing dependency injection provides you with the following advantages:
-* Reusability of code.
-* Ease of refactoring.
-* Ease of testing.
+* Android Studio Arctic Fox or higher with updated SDK and Gradle.
 
+### Prerequisites
 
-# Pre-requisites
-* Experience with Kotlin syntax.
-* You understand Dependency Injection.
+* Some experience with Kotlin syntax.
+* Understanding of why dependency injection is important in an application.
+* Understanding of Room database and ContentProvider.
 
-# Getting Started
-1. Install Android Studio, if you don't already have it.
-2. Download the sample.
-3. Import the sample into Android Studio.
-4. Build and run the sample.
+## Branches in this Repository
 
-
-# Comparison between different branches
-* [Full codelab comparison](https://github.com/googlecodelabs/android-hilt/compare/master...solution)
-
+* **[starter-code](https://github.com/kaushiknsanji/android-hilt/tree/starter-code)**
+	* This is the Starter code for the [codelab][Android_Hilt_Codelab].
+	* In comparison to the original [main][Android_Hilt_Starter_Repository] repository, this repository uses Android `ViewBinding` to bind UI elements with its objects.
+* **[master](https://github.com/kaushiknsanji/android-hilt/tree/master)**
+	* This contains the Solution for the [codelab][Android_Hilt_Codelab].
+	* In comparison to the original [solution][Android_Hilt_Solution_Repository] repository, this repository contains additional modifications and corrections-
+		* Uses Idiomatic Kotlin approaches in the code for [LogsContentProvider](https://github.com/kaushiknsanji/android-hilt/blob/master/app/src/main/java/com/example/android/hilt/contentprovider/LogsContentProvider.kt).
+		* Includes Provider element for `LogsContentProvider` in [AndroidManifest.xml](https://github.com/kaushiknsanji/android-hilt/blob/e5497a0a151dfae046d36b7e90cf3276ab9c8808/app/src/main/AndroidManifest.xml#L40).
 
 # License
 
@@ -50,3 +51,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+
+<!-- Reference Style Links are to be placed after this -->
+[Android_Hilt_Codelab]: https://developer.android.com/codelabs/android-hilt
+[Android_Hilt_Repository]: https://github.com/googlecodelabs/android-hilt
+[Android_Hilt_Starter_Repository]: https://github.com/googlecodelabs/android-hilt/tree/main
+[Android_Hilt_Solution_Repository]: https://github.com/googlecodelabs/android-hilt/tree/solution
